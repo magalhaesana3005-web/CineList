@@ -6,22 +6,35 @@
 }
 
 body {
-  background: white;
+  background-color: whitesmoke;
   color: black;
+  line-height: 1.5;
   padding: 15px;
   max-width: 700px;
   margin: 0 auto;
 }
 
 header, section {
-  background: white;
+  background-color: white;
   padding: 20px;
   margin-bottom: 15px;
+  border: 1px solid lightgray;
   border-radius: 6px;
 }
 
 header {
   text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: dodgerblue;
+  margin-bottom: 5px;
+}
+
+header p {
+  font-size: 1rem;
+  color: dimgray;
 }
 
 nav ul {
@@ -34,16 +47,58 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: blue;
+  color: dodgerblue;
   font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
 }
 
-input, select, textarea {
+nav a:hover {
+  background-color: gainsboro;
+  color: darkblue;
+}
+
+
+form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+form label, 
+form div, 
+form textarea, 
+form button {
+  grid-column: 1 / -1;
+}
+
+label {
+  font-weight: bold;
+  color: dimgray;
+  font-size: 0.9rem;
+}
+
+#busca {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  align-items: end;
+}
+
+#busca h2 {
+  grid-column: 1 / -1;
+}
+
+input[type="text"], 
+input[type="number"], 
+select, 
+textarea {
   width: 100%;
   padding: 8px;
-  margin: 5px 0 10px 0;
-  border: 1px solid black;
+  border: 1px solid silver;
   border-radius: 4px;
+  background-color: white;
+  color: black;
 }
 
 input[type="radio"] {
@@ -52,39 +107,47 @@ input[type="radio"] {
 }
 
 button {
-  background: blue;
+  background-color: dodgerblue;
   color: white;
   border: none;
   padding: 8px 12px;
   border-radius: 4px;
+  font-weight: bold;
   cursor: pointer;
 }
 
 button:hover {
-  background: blue;
+  background-color: darkblue;
 }
 
 table {
   width: 100%;
-  border-collapse: collapse;
 }
 
 th, td {
   padding: 8px;
   text-align: left;
-  border-bottom: 1px solid rosybrown;
+  border-bottom: 1px solid lightgray;
 }
 
 th {
-  background: blue;
+  background-color: lightgray;
 }
 
-#lista {
-  overflow-x: auto;
+tr:hover {
+  background-color: whitesmoke;
 }
 
-@media (max-width: 600px) {
+@media (min-width: 500px) {
+  form {
+    grid-template-columns: auto 1fr;
+    align-items: center;
+  }
+}
+
+@media (max-width: 400px) {
   nav ul {
     flex-direction: column;
+    align-items: center;
   }
 }
