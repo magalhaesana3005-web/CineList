@@ -16,3 +16,15 @@ botaoSalvar.addEventListener("click", function() {
     campoTitulo.value = "";
     campoAno.value = "";
 });
+
+listaFilmes.addEventListener("click", function(event) {
+    const linha = event.target.closest("tr");
+
+    if (event.target.textContent === "Excluir") {
+        linha.remove();
+    }
+
+    if (event.target.textContent === "Ver") {
+        alert(linha.cells[0].textContent);
+    }
+});
