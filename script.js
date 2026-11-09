@@ -28,3 +28,12 @@ listaFilmes.addEventListener("click", function(event) {
         alert(linha.cells[0].textContent);
     }
 });
+campoBusca.addEventListener("input", function() {
+    const busca = campoBusca.value.toLowerCase();
+
+    listaFilmes.querySelectorAll("tr").forEach(function(linha) {
+        const titulo = linha.cells[0].textContent.toLowerCase();
+
+        linha.style.display = titulo.includes(busca) ? "" : "none";
+    });
+});
